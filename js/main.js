@@ -81,3 +81,44 @@ orderForm.reset();
 orderDialog.close();
 
 });
+
+// Получаем кнопку «Наверх».
+const scrollTopButton = document.getElementById('scroll-top');
+
+// Прокручиваем страницу наверх по нажатию на кнопку.
+if (scrollTopButton) {
+scrollTopButton.addEventListener('click', () => {
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+}
+
+// Обрабатываем форму на странице order.html.
+const orderFormPage = document.getElementById('order-form-page');
+const successMessagePage = document.getElementById('success-message-page');
+
+if (orderFormPage) {
+orderFormPage.addEventListener('submit', (event) => {
+event.preventDefault();
+
+const formElements = Array.from(orderFormPage.elements);
+
+formElements.forEach((element) => {
+if (element.willValidate) {
+element.removeAttribute('aria-invalid');
+}
+});
+
+if (!orderFormPage.checkValidity()) {
+formElements.forEach((element) => {
+if (element.willValidate && !element.checkValidity()) {
+element.setAttribute('aria-invalid', 'true');
+}
+});
+orderFormPage.reportValidity();
+return;
+}
+
+successMessagePage.hidden = false;
+orderFormPage.reset();
+});
+}
