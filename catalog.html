@@ -9,17 +9,23 @@
 </head>
 <body>
 
-<header>
-<div class="site-header">
-<a class="site-logo" href="index.html">ShopProject</a>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="site-header__logo" href="index.html">ShopProject</a>
 <nav class="site-nav" aria-label="Основная навигация">
 <ul class="site-nav__list">
-<li><a href="index.html">Главная</a></li>
-<li><a href="catalog.html">Каталог</a></li>
-<li><a href="contacts.html">Контакты</a></li>
-<li><a href="index.html#advantages">Преимущества</a></li>
-<li><a href="index.html#popular">Популярные товары</a></li>
-<li><a href="index.html#contacts">Обратная связь</a></li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="index.html">Главная</a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">Контакты</a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+</li>
 </ul>
 </nav>
 </div>
@@ -28,8 +34,8 @@
 <main>
 
 <nav class="breadcrumbs" aria-label="Хлебные крошки">
-<a href="index.html">Главная</a>
-<span>Каталог</span>
+<a class="breadcrumbs__link" href="index.html">Главная</a>
+<span class="breadcrumbs__current">Каталог</span>
 </nav>
 
 <section class="catalog-layout">
@@ -68,7 +74,7 @@
 <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
 </fieldset>
 
-<button class="button" type="submit">Применить</button>
+<button class="button button--primary" type="submit">Применить</button>
 
 </form>
 </aside>
@@ -79,45 +85,45 @@
 <div class="products-grid">
 
 <article class="product-card">
-<h3>Беспроводные наушники</h3>
-<p>Накладные Bluetooth-наушники с шумоподавлением и временем работы до 30 часов.</p>
-<p>Цена: 7 990 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">Беспроводные наушники</h3>
+<p class="product-card__description">Накладные Bluetooth-наушники с шумоподавлением и временем работы до 30 часов.</p>
+<p class="product-card__price">Цена: 7 990 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 <article class="product-card">
-<h3>Механическая клавиатура</h3>
-<p>Компактная механическая клавиатура с подсветкой и переключателями Blue Switch.</p>
-<p>Цена: 4 590 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">Механическая клавиатура</h3>
+<p class="product-card__description">Компактная механическая клавиатура с подсветкой и переключателями Blue Switch.</p>
+<p class="product-card__price">Цена: 4 590 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 <article class="product-card">
-<h3>Игровая мышь</h3>
-<p>Оптическая мышь с сенсором 16 000 DPI и настраиваемой RGB-подсветкой.</p>
-<p>Цена: 2 790 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">Игровая мышь</h3>
+<p class="product-card__description">Оптическая мышь с сенсором 16 000 DPI и настраиваемой RGB-подсветкой.</p>
+<p class="product-card__price">Цена: 2 790 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 <article class="product-card">
-<h3>USB-микрофон</h3>
-<p>Конденсаторный USB-микрофон с кардиоидной диаграммой для стримов и записи.</p>
-<p>Цена: 5 490 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">USB-микрофон</h3>
+<p class="product-card__description">Конденсаторный USB-микрофон с кардиоидной диаграммой для стримов и записи.</p>
+<p class="product-card__price">Цена: 5 490 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 <article class="product-card">
-<h3>Веб-камера Full HD</h3>
-<p>Веб-камера 1080p с автофокусом и встроенным микрофоном для видеозвонков.</p>
-<p>Цена: 3 290 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">Веб-камера Full HD</h3>
+<p class="product-card__description">Веб-камера 1080p с автофокусом и встроенным микрофоном для видеозвонков.</p>
+<p class="product-card__price">Цена: 3 290 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 <article class="product-card">
-<h3>Монитор 27"</h3>
-<p>IPS-монитор с разрешением 2560×1440, частотой 165 Гц и поддержкой HDR.</p>
-<p>Цена: 24 990 руб.</p>
-<a class="button" href="index.html#popular">Подробнее</a>
+<h3 class="product-card__title">Монитор 27"</h3>
+<p class="product-card__description">IPS-монитор с разрешением 2560×1440, частотой 165 Гц и поддержкой HDR.</p>
+<p class="product-card__price">Цена: 24 990 руб.</p>
+<a class="button button--primary" href="index.html#popular">Подробнее</a>
 </article>
 
 </div>
@@ -127,7 +133,7 @@
 
 </main>
 
-<footer>
+<footer class="site-footer">
 <p>&copy; 2026 Учебный проект. Все права защищены.</p>
 <p>Дисциплина: Фронтенд и бэкенд разработка</p>
 </footer>
