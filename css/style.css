@@ -395,6 +395,30 @@ outline: 2px dashed var(--color-primary);
 outline-offset: 4px;
 }
 
+.scroll-top {
+position: fixed;
+right: var(--space-lg);
+bottom: var(--space-lg);
+width: 44px;
+height: 44px;
+border: none;
+border-radius: 50%;
+color: var(--color-white);
+background-color: var(--color-primary);
+font-size: 20px;
+cursor: pointer;
+z-index: 20;
+}
+
+.scroll-top:hover {
+background-color: var(--color-primary-dark);
+}
+
+.scroll-top:focus-visible {
+outline: 2px solid var(--color-primary-dark);
+outline-offset: 3px;
+}
+
 .site-footer {
 padding: var(--space-lg);
 background-color: var(--color-surface);
