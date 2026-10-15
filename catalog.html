@@ -4,10 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Каталог товаров учебного интернет-магазина.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Каталог товаров – Учебный интернет-магазин">
-<meta property="og:description" content="Каталог товаров учебного интернет-магазина.">
-<meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
 <title>Каталог товаров – Учебный интернет-магазин</title>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/main.js" defer></script>
@@ -67,7 +63,7 @@
 <h3 class="product-card__title">Беспроводные наушники</h3>
 <p class="product-card__description">Накладные Bluetooth-наушники с шумоподавлением и временем работы до 30 часов.</p>
 <p class="product-card__price">Цена: 7 990 руб.</p>
-<button class="button product-card__button" type="button" data-product="Беспроводные наушники">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 <article class="product-card product-card--featured">
@@ -75,7 +71,7 @@
 <h3 class="product-card__title">Механическая клавиатура</h3>
 <p class="product-card__description">Компактная механическая клавиатура с подсветкой и переключателями Blue Switch.</p>
 <p class="product-card__price">Цена: 4 590 руб.</p>
-<button class="button product-card__button" type="button" data-product="Механическая клавиатура">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 <article class="product-card">
@@ -83,7 +79,7 @@
 <h3 class="product-card__title">Игровая мышь</h3>
 <p class="product-card__description">Оптическая мышь с сенсором 16 000 DPI и настраиваемой RGB-подсветкой.</p>
 <p class="product-card__price">Цена: 2 790 руб.</p>
-<button class="button product-card__button" type="button" data-product="Игровая мышь">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 <article class="product-card">
@@ -91,7 +87,7 @@
 <h3 class="product-card__title">USB-микрофон</h3>
 <p class="product-card__description">Конденсаторный USB-микрофон с кардиоидной диаграммой для стримов и записи.</p>
 <p class="product-card__price">Цена: 5 490 руб.</p>
-<button class="button product-card__button" type="button" data-product="USB-микрофон">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 <article class="product-card">
@@ -99,7 +95,7 @@
 <h3 class="product-card__title">Веб-камера Full HD</h3>
 <p class="product-card__description">Веб-камера 1080p с автофокусом и встроенным микрофоном для видеозвонков.</p>
 <p class="product-card__price">Цена: 3 290 руб.</p>
-<button class="button product-card__button" type="button" data-product="Веб-камера Full HD">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 <article class="product-card product-card--discount">
@@ -107,7 +103,7 @@
 <h3 class="product-card__title">Монитор 27"</h3>
 <p class="product-card__description">IPS-монитор с разрешением 2560×1440, частотой 165 Гц и поддержкой HDR.</p>
 <p class="product-card__price">Цена: 24 990 руб.</p>
-<button class="button product-card__button" type="button" data-product="Монитор 27">Заказать</button>
+<a class="button button--primary" href="product.html">Подробнее</a>
 </article>
 
 </div>
@@ -123,55 +119,6 @@
 </footer>
 
 <button class="scroll-top" type="button" id="scroll-top" aria-label="Наверх">↑</button>
-
-<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
-<h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
-<form class="order-form" id="order-form" action="#" method="post" novalidate>
-<input id="selected-product" name="selected-product" type="hidden">
-<div class="order-form__field">
-<label class="order-form__label" for="order-name">Имя</label>
-<input class="order-form__input" id="order-name" name="name" type="text" placeholder="Введите ваше имя" minlength="2" autocomplete="given-name" required>
-</div>
-<div class="order-form__field">
-<label class="order-form__label" for="order-email">E-mail</label>
-<input class="order-form__input" id="order-email" name="email" type="email" placeholder="example@mail.ru" autocomplete="email" required>
-</div>
-<div class="order-form__field">
-<label class="order-form__label" for="order-phone">Телефон</label>
-<input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
-<small>Формат: +7 (900) 000-00-00</small>
-</div>
-<div class="order-form__field">
-<label class="order-form__label" for="order-date">Дата связи</label>
-<input class="order-form__input" id="order-date" name="date" type="date">
-</div>
-<div class="order-form__field">
-<label class="order-form__label" for="order-topic">Тема заявки</label>
-<select class="order-form__select" id="order-topic" name="topic" required>
-<option value="">Выберите тему</option>
-<option value="product">Заказ товара</option>
-<option value="consultation">Консультация</option>
-<option value="delivery">Доставка</option>
-</select>
-</div>
-<div class="order-form__field">
-<label class="order-form__label" for="order-comment">Комментарий</label>
-<textarea class="order-form__textarea" id="order-comment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-</div>
-<div class="order-form__field order-form__field--checkbox">
-<label>
-<input id="order-agreement" name="agreement" type="checkbox" required>
-Я согласен на обработку данных
-</label>
-</div>
-<div class="order-form__actions">
-<button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
-<button class="button button--primary" type="submit">Отправить заявку</button>
-</div>
-</form>
-</dialog>
-
-<p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
 
 </body>
 </html>

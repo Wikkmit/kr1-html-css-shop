@@ -1,9 +1,4 @@
-/* ===================================
-   1. Переменные проекта
-   =================================== */
-
 :root {
-/* Основные цвета проекта */
 --color-bg: #ffffff;
 --color-text: #222222;
 --color-muted: #666666;
@@ -17,25 +12,18 @@
 --color-success-bg: #eefaf0;
 --color-white: #ffffff;
 
-/* Отступы */
 --space-xs: 4px;
 --space-sm: 8px;
 --space-md: 16px;
 --space-lg: 24px;
 --space-xl: 32px;
 
-/* Скругления */
 --radius-sm: 6px;
 --radius-md: 8px;
 --radius-lg: 12px;
 
-/* Размеры */
 --container-width: 1100px;
 }
-
-/* ===================================
-   2. Базовые стили
-   =================================== */
 
 * {
 box-sizing: border-box;
@@ -52,10 +40,6 @@ line-height: 1.5;
 color: var(--color-text);
 background-color: var(--color-bg);
 }
-
-/* ===================================
-   3. Общие элементы интерфейса
-   =================================== */
 
 a {
 color: var(--color-primary);
@@ -110,10 +94,6 @@ outline-offset: 3px;
 opacity: 0.6;
 cursor: not-allowed;
 }
-
-/* ===================================
-   4. Компоненты страницы
-   =================================== */
 
 .site-header {
 position: sticky;
@@ -330,10 +310,6 @@ border-radius: var(--radius-sm);
 font: inherit;
 }
 
-.product-detail {
-max-width: 640px;
-}
-
 .product-table {
 width: 100%;
 border-collapse: collapse;
@@ -390,35 +366,6 @@ margin: 0;
 color: var(--color-muted);
 }
 
-:target {
-outline: 2px dashed var(--color-primary);
-outline-offset: 4px;
-}
-
-.scroll-top {
-position: fixed;
-right: var(--space-lg);
-bottom: var(--space-lg);
-width: 44px;
-height: 44px;
-border: none;
-border-radius: 50%;
-color: var(--color-white);
-background-color: var(--color-primary);
-font-size: 20px;
-cursor: pointer;
-z-index: 20;
-}
-
-.scroll-top:hover {
-background-color: var(--color-primary-dark);
-}
-
-.scroll-top:focus-visible {
-outline: 2px solid var(--color-primary-dark);
-outline-offset: 3px;
-}
-
 .site-footer {
 padding: var(--space-lg);
 background-color: var(--color-surface);
@@ -437,90 +384,4 @@ background-color: var(--color-primary);
 font-size: 20px;
 cursor: pointer;
 z-index: 20;
-}
-
-.scroll-top:hover {
-background-color: var(--color-primary-dark);
-}
-
-.scroll-top:focus-visible {
-outline: 2px solid var(--color-primary-dark);
-outline-offset: 3px;
-}
-
-/* ===================================
-   5. Форма и модальное окно
-   =================================== */
-
-.order-dialog {
-width: min(100% - 32px, 560px);
-padding: var(--space-lg);
-border: none;
-border-radius: var(--radius-lg);
-}
-
-.order-dialog::backdrop {
-background-color: rgba(0, 0, 0, 0.5);
-}
-
-.order-dialog__title {
-margin-top: 0;
-}
-
-.order-form__field {
-margin-bottom: var(--space-md);
-}
-
-.order-form__label {
-display: block;
-margin-bottom: var(--space-xs);
-}
-
-.order-form__input,
-.order-form__select,
-.order-form__textarea {
-width: 100%;
-padding: 10px 12px;
-border: 1px solid var(--color-border);
-border-radius: var(--radius-sm);
-font: inherit;
-}
-
-.order-form__input[type="checkbox"] {
-width: auto;
-}
-
-.order-form__input:hover,
-.order-form__select:hover,
-.order-form__textarea:hover {
-border-color: var(--color-primary);
-}
-
-.order-form__input:focus-visible,
-.order-form__select:focus-visible,
-.order-form__textarea:focus-visible {
-outline: 2px solid var(--color-primary);
-outline-offset: 3px;
-}
-
-.order-form__actions {
-display: flex;
-gap: var(--space-md);
-margin-top: var(--space-lg);
-}
-
-.order-form--page {
-max-width: 640px;
-}
-
-[aria-invalid="true"] {
-border-color: var(--color-danger);
-}
-
-.success-message {
-max-width: var(--container-width);
-margin: var(--space-lg) auto;
-padding: var(--space-md);
-border-left: 4px solid var(--color-success);
-background-color: var(--color-success-bg);
 }
