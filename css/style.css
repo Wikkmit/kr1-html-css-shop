@@ -330,6 +330,10 @@ border-radius: var(--radius-sm);
 font: inherit;
 }
 
+.product-detail {
+max-width: 640px;
+}
+
 .product-table {
 width: 100%;
 border-collapse: collapse;
@@ -352,6 +356,38 @@ text-align: left;
 
 .product-table thead th {
 background-color: var(--color-surface);
+}
+
+.review {
+padding: var(--space-md);
+margin-bottom: var(--space-md);
+border-left: 4px solid var(--color-primary);
+background-color: var(--color-surface);
+}
+
+.review__title {
+margin: 0 0 var(--space-xs);
+}
+
+.review__text {
+margin: 0;
+}
+
+.faq-item {
+padding: var(--space-md);
+margin-bottom: var(--space-md);
+border: 1px solid var(--color-border);
+border-radius: var(--radius-md);
+background-color: var(--color-bg);
+}
+
+.faq-item__question {
+margin: 0 0 var(--space-xs);
+}
+
+.faq-item__answer {
+margin: 0;
+color: var(--color-muted);
 }
 
 :target {
@@ -381,6 +417,11 @@ z-index: 20;
 
 .scroll-top:hover {
 background-color: var(--color-primary-dark);
+}
+
+.scroll-top:focus-visible {
+outline: 2px solid var(--color-primary-dark);
+outline-offset: 3px;
 }
 
 /* ===================================
@@ -442,4 +483,20 @@ outline-offset: 3px;
 display: flex;
 gap: var(--space-md);
 margin-top: var(--space-lg);
+}
+
+.order-form--page {
+max-width: 640px;
+}
+
+[aria-invalid="true"] {
+border-color: var(--color-danger);
+}
+
+.success-message {
+max-width: var(--container-width);
+margin: var(--space-lg) auto;
+padding: var(--space-md);
+border-left: 4px solid var(--color-success);
+background-color: var(--color-success-bg);
 }
