@@ -22,10 +22,13 @@
 <a class="site-nav__link" href="catalog.html">Каталог</a>
 </li>
 <li class="site-nav__item">
-<a class="site-nav__link" href="contacts.html">Контакты</a>
+<a class="site-nav__link" href="product.html">Карточка товара</a>
 </li>
 <li class="site-nav__item">
-<a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+<a class="site-nav__link" href="order.html">Заявка</a>
+</li>
+<li class="site-nav__item">
+<a class="site-nav__link" href="contacts.html">Контакты</a>
 </li>
 </ul>
 </nav>
@@ -59,7 +62,8 @@
 
 <div class="products-grid">
 
-<article class="product-card product-card--featured">
+<article class="product-card product-card--discount">
+<span class="product-card__badge">Скидка</span>
 <h3 class="product-card__title">Беспроводные наушники</h3>
 <p class="product-card__description">Накладные Bluetooth-наушники с шумоподавлением и временем работы до 30 часов.</p>
 <p class="product-card__price">Цена: 7 990 руб.</p>
@@ -68,7 +72,8 @@
 </button>
 </article>
 
-<article class="product-card">
+<article class="product-card product-card--featured">
+<span class="product-card__badge">Хит</span>
 <h3 class="product-card__title">Механическая клавиатура</h3>
 <p class="product-card__description">Компактная механическая клавиатура с подсветкой и переключателями Blue Switch.</p>
 <p class="product-card__price">Цена: 4 590 руб.</p>
@@ -78,6 +83,7 @@
 </article>
 
 <article class="product-card">
+<span class="product-card__badge">Новинка</span>
 <h3 class="product-card__title">Игровая мышь</h3>
 <p class="product-card__description">Оптическая мышь с сенсором 16 000 DPI и настраиваемой RGB-подсветкой.</p>
 <p class="product-card__price">Цена: 2 790 руб.</p>
@@ -102,6 +108,8 @@
 <p>&copy; 2026 Учебный проект. Все права защищены.</p>
 <p>Дисциплина: Фронтенд и бэкенд разработка</p>
 </footer>
+
+<button class="scroll-top" type="button" id="scroll-top" aria-label="Наверх">↑</button>
 
 <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
 
