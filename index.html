@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
-<body>
+<body id="top">
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -40,7 +40,10 @@
           <a class="site-nav__link" href="product.html">Карточка товара</a>
         </li>
         <li class="site-nav__item">
-          <a class="site-nav__link" href="order.html">Заявка</a>
+          <a class="site-nav__link" href="about.html">О магазине</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="delivery.html">Доставка</a>
         </li>
         </ul>
       </nav>
@@ -111,41 +114,153 @@
     </section>
 
     <section class="section" id="reviews">
-      <h2>Отзывы</h2>
-      <div class="reviews">
-        <article class="review-card">
-          <blockquote class="review-card__text">Удобный каталог, быстро нашёл нужный товар.</blockquote>
-          <p class="review-card__author">Анна</p>
-        </article>
-        <article class="review-card">
-          <blockquote class="review-card__text">Заявку оформил за минуту, менеджер перезвонил в тот же день.</blockquote>
-          <p class="review-card__author">Игорь</p>
-        </article>
-        <article class="review-card">
-          <blockquote class="review-card__text">Понятные карточки товаров и честные цены.</blockquote>
-          <p class="review-card__author">Мария</p>
-        </article>
-      </div>
+      
+<section class="section" id="reviews">
+  <h2>Отзывы покупателей</h2>
+
+  <div class="reviews">
+    <article class="review-card">
+      <p class="review-card__rating" aria-label="Оценка 5 из 5">
+        <span aria-hidden="true">★★★★★</span>
+        <span class="review-card__rating-label">5.0 / 5</span>
+      </p>
+
+      <blockquote class="review-card__text">
+        Очень удобный каталог: категории понятные, описания подробные,
+        а цены сразу видны. Нашла нужный товар буквально за пару минут.
+        Особенно понравилось, что не пришлось долго искать нужную
+        информацию и сравнивать товары на разных страницах.
+      </blockquote>
+
+      <p class="review-card__author">
+        Анна <span>— покупатель</span>
+      </p>
+    </article>
+
+    <article class="review-card">
+      <p class="review-card__rating" aria-label="Оценка 5 из 5">
+        <span aria-hidden="true">★★★★★</span>
+        <span class="review-card__rating-label">5.0 / 5</span>
+      </p>
+
+      <blockquote class="review-card__text">
+        Оформление заявки простое и понятное. После отправки со мной
+        связались в тот же день, подробно ответили на вопросы и помогли
+        разобраться с выбором. Понравилось внимательное отношение,
+        удобная форма и отсутствие лишних сложностей.
+      </blockquote>
+
+      <p class="review-card__author">
+        Игорь <span>— покупатель</span>
+      </p>
+    </article>
+
+    <article class="review-card">
+      <p class="review-card__rating" aria-label="Оценка 4 из 5">
+        <span aria-hidden="true">★★★★☆</span>
+        <span class="review-card__rating-label">4.0 / 5</span>
+      </p>
+
+      <blockquote class="review-card__text">
+        Карточки товаров оформлены аккуратно: можно быстро посмотреть
+        основные характеристики и сравнить варианты. Цены указаны
+        понятно, а сайт хорошо выглядит даже на телефоне. Было бы
+        здорово добавить ещё больше фотографий и подробных описаний.
+        В целом пользоваться магазином удобно.
+      </blockquote>
+
+      <p class="review-card__author">
+        Мария <span>— покупатель</span>
+      </p>
+    </article>
+  </div>
+</section>
+
     </section>
 
     <section class="section" id="faq">
-      <h2>Часто задаваемые вопросы</h2>
-      <details class="faq__item">
-        <summary class="faq__question">Как оформить заявку?</summary>
-        <p class="faq__answer">Нажмите «Заказать» в карточке товара и заполните форму.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__question">Какие данные нужны для заявки?</summary>
-        <p class="faq__answer">Имя, e-mail, телефон, тема заявки и согласие на обработку данных.</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__question">Где посмотреть все товары?</summary>
-        <p class="faq__answer">Все товары собраны на странице «Каталог».</p>
-      </details>
-      <details class="faq__item">
-        <summary class="faq__question">Как связаться с магазином?</summary>
-        <p class="faq__answer">Контакты указаны на странице «Контакты».</p>
-      </details>
+      
+<section class="section" id="faq">
+  <h2>Часто задаваемые вопросы</h2>
+
+  <details class="faq__item">
+    <summary class="faq__question">
+      Как оформить заявку?
+    </summary>
+
+    <p class="faq__answer">
+      Выберите понравившийся товар и нажмите кнопку «Заказать»
+      в его карточке. Откроется форма, в которой необходимо указать
+      имя, электронную почту, телефон и тему обращения. При желании
+      добавьте комментарий с удобным временем для звонка или
+      дополнительными пожеланиями. Перед отправкой проверьте
+      заполненные данные и подтвердите согласие на обработку данных.
+    </p>
+
+    <p class="faq__rating" aria-label="Оценка ответа: 5 из 5">
+      <span aria-hidden="true">★★★★★</span>
+    </p>
+  </details>
+
+  <details class="faq__item">
+    <summary class="faq__question">
+      Какие данные нужны для заявки?
+    </summary>
+
+    <p class="faq__answer">
+      Для обратной связи понадобятся имя, действующий адрес электронной
+      почты и номер телефона. Также нужно выбрать тему обращения:
+      заказ товара, консультация или вопрос о доставке. Поле
+      комментария необязательно, но в нём можно указать желаемые
+      характеристики товара, уточнения по заказу и другие пожелания.
+      Чем подробнее описан вопрос, тем проще подготовить ответ.
+    </p>
+
+    <p class="faq__rating" aria-label="Оценка ответа: 5 из 5">
+      <span aria-hidden="true">★★★★★</span>
+    </p>
+  </details>
+
+  <details class="faq__item">
+    <summary class="faq__question">
+      Где посмотреть все товары?
+    </summary>
+
+    <p class="faq__answer">
+      Откройте раздел «Каталог» в верхнем меню сайта. Там размещены
+      карточки товаров с описаниями и ценами. Выберите интересующий
+      товар, чтобы ознакомиться с дополнительной информацией.
+      На компьютере товары отображаются в несколько колонок,
+      а на телефоне автоматически располагаются один под другим.
+      Если возникнут вопросы, воспользуйтесь формой обратной связи.
+    </p>
+
+    <p class="faq__rating" aria-label="Оценка ответа: 5 из 5">
+      <span aria-hidden="true">★★★★★</span>
+    </p>
+  </details>
+
+  <details class="faq__item">
+    <summary class="faq__question">
+      Как связаться с магазином?
+    </summary>
+
+    <p class="faq__answer">
+      Перейдите в раздел «Контакты» через верхнее меню. На странице
+      указаны доступные контактные данные. Также можно воспользоваться
+      формой заявки и подробно описать свой вопрос в поле
+      «Комментарий». Укажите, какая информация вам нужна, какой товар
+      вас интересует и как с вами удобнее связаться. Это поможет
+      быстрее разобраться в обращении. Контакты в данном проекте
+      являются демонстрационными.
+    </p>
+
+    <p class="faq__rating" aria-label="Оценка ответа: 5 из 5">
+      <span aria-hidden="true">★★★★★</span>
+    </p>
+  </details>
+</section>
+
     </section>
 
     <aside class="aside-info">
