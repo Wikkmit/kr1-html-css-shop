@@ -1,124 +1,191 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Каталог товаров учебного интернет-магазина.">
-<title>Каталог товаров – Учебный интернет-магазин</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог товаров учебного интернет-магазина.">
+  <title>Каталог товаров — Учебный интернет-магазин</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Каталог товаров — Учебный интернет-магазин">
+  <meta property="og:description" content="Каталог товаров учебного интернет-магазина.">
+  <meta property="og:image" content="https://username.github.io/kr1-html-css-shop/images/preview.jpg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="index.html">Главная</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="contacts.html">Контакты</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="index.html#advantages">Преимущества</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="product.html">Карточка товара</a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="order.html">Заявка</a>
+        </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<header class="site-header">
-<div class="site-header__inner">
-<a class="site-header__logo" href="index.html">ShopProject</a>
-<nav class="site-nav" aria-label="Основная навигация">
-<ul class="site-nav__list">
-<li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
-<li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="catalog.html">Каталог</a></li>
-<li class="site-nav__item"><a class="site-nav__link" href="product.html">Карточка товара</a></li>
-<li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
-<li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
-</ul>
-</nav>
-</div>
-</header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
+    </nav>
 
-<main>
+    <section class="section">
+      <h1>Каталог товаров</h1>
+      <p>
+        На этой странице представлен учебный каталог товаров.
+        В дальнейшем здесь будут добавлены фильтры, сортировка и более
+        подробные карточки.
+      </p>
+    </section>
 
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
-<a class="breadcrumbs__link" href="index.html">Главная</a>
-<span class="breadcrumbs__current">Каталог</span>
-</nav>
+    <section class="catalog-layout">
+      <aside class="catalog-filters">
+        <h2>Фильтры</h2>
 
-<section class="catalog-layout">
+        <form class="filters-form" action="#" method="get">
+          <fieldset>
+            <legend>Категория</legend>
 
-<aside class="catalog-filters">
-<h2>Фильтры</h2>
-<form class="filters-form" action="#" method="get">
-<fieldset>
-<legend>Категория</legend>
-<label><input type="checkbox" name="category" value="all"> Все товары</label>
-<label><input type="checkbox" name="category" value="popular"> Популярные</label>
-<label><input type="checkbox" name="category" value="new"> Новинки</label>
-</fieldset>
-<fieldset>
-<legend>Цена</legend>
-<label for="price-from">От</label>
-<input id="price-from" name="price-from" type="number" min="0" placeholder="0">
-<label for="price-to">До</label>
-<input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
-</fieldset>
-<button class="button button--primary" type="submit">Применить</button>
-</form>
-</aside>
+            <label>
+              <input type="checkbox" name="category" value="all">
+              Все товары
+            </label>
 
-<section class="catalog-products">
-<h2>Список товаров</h2>
-<div class="products-grid">
+            <label>
+              <input type="checkbox" name="category" value="popular">
+              Популярные
+            </label>
 
-<article class="product-card product-card--discount">
-<span class="product-card__badge">Скидка</span>
-<h3 class="product-card__title">Беспроводные наушники</h3>
-<p class="product-card__description">Накладные Bluetooth-наушники с шумоподавлением и временем работы до 30 часов.</p>
-<p class="product-card__price">Цена: 7 990 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+            <label>
+              <input type="checkbox" name="category" value="new">
+              Новинки
+            </label>
+          </fieldset>
 
-<article class="product-card product-card--featured">
-<span class="product-card__badge">Хит</span>
-<h3 class="product-card__title">Механическая клавиатура</h3>
-<p class="product-card__description">Компактная механическая клавиатура с подсветкой и переключателями Blue Switch.</p>
-<p class="product-card__price">Цена: 4 590 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+          <fieldset>
+            <legend>Цена</legend>
 
-<article class="product-card">
-<span class="product-card__badge">Новинка</span>
-<h3 class="product-card__title">Игровая мышь</h3>
-<p class="product-card__description">Оптическая мышь с сенсором 16 000 DPI и настраиваемой RGB-подсветкой.</p>
-<p class="product-card__price">Цена: 2 790 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+            <label for="price-from">От</label>
+            <input id="price-from" name="price-from" type="number" min="0" placeholder="0">
 
-<article class="product-card">
-<span class="product-card__badge">Новинка</span>
-<h3 class="product-card__title">USB-микрофон</h3>
-<p class="product-card__description">Конденсаторный USB-микрофон с кардиоидной диаграммой для стримов и записи.</p>
-<p class="product-card__price">Цена: 5 490 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+            <label for="price-to">До</label>
+            <input id="price-to" name="price-to" type="number" min="0" placeholder="5000">
+          </fieldset>
 
-<article class="product-card">
-<span class="product-card__badge">Хит</span>
-<h3 class="product-card__title">Веб-камера Full HD</h3>
-<p class="product-card__description">Веб-камера 1080p с автофокусом и встроенным микрофоном для видеозвонков.</p>
-<p class="product-card__price">Цена: 3 290 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+          <button class="button button--primary" type="submit">Применить</button>
+        </form>
+      </aside>
 
-<article class="product-card product-card--discount">
-<span class="product-card__badge">Скидка</span>
-<h3 class="product-card__title">Монитор 27"</h3>
-<p class="product-card__description">IPS-монитор с разрешением 2560×1440, частотой 165 Гц и поддержкой HDR.</p>
-<p class="product-card__price">Цена: 24 990 руб.</p>
-<a class="button button--primary" href="product.html">Подробнее</a>
-</article>
+      <section class="catalog-products">
+        <h2>Список товаров</h2>
 
-</div>
-</section>
+        <div class="products-grid">
+          <article class="product-card product-card--featured">
+            <h3 class="product-card__title">Товар 1</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 1000 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
 
-</section>
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 2</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 1500 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
 
-</main>
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 3</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 2000 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
 
-<footer class="site-footer">
-<p>&copy; 2026 Учебный проект. Все права защищены.</p>
-<p>Дисциплина: Фронтенд и бэкенд разработка</p>
-</footer>
+          <article class="product-card product-card--discount">
+            <span class="product-card__badge">Скидка</span>
+            <h3 class="product-card__title">Товар со скидкой</h3>
+            <p class="product-card__description">Краткое описание товара.</p>
+            <p class="product-card__price">Цена: 1200 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
 
-<button class="scroll-top" type="button" id="scroll-top" aria-label="Наверх">↑</button>
+          <article class="product-card">
+            <span class="product-card__badge">Новинка</span>
+            <h3 class="product-card__title">Товар 5</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 2500 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
 
+          <article class="product-card">
+            <span class="product-card__badge">Хит</span>
+            <h3 class="product-card__title">Товар 6</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 3000 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
+
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 7</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 3500 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
+
+          <article class="product-card">
+            <h3 class="product-card__title">Товар 8</h3>
+            <p class="product-card__description">Краткое описание учебного товара.</p>
+            <p class="product-card__price">Цена: 4000 руб.</p>
+            <a class="button button--primary product-card__button" href="product.html">
+              Подробнее
+            </a>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+  <a class="button button--primary to-top" href="#top">Наверх</a>
 </body>
 </html>
