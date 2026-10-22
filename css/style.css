@@ -531,3 +531,496 @@ a:focus-visible {
 .to-top:hover {
   color: var(--color-white);
 }
+
+
+/* ===== Улучшенная шапка и закреплённое меню ===== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(247, 247, 247, 0.96);
+  border-bottom: 1px solid rgba(0, 87, 184, 0.12);
+  box-shadow: 0 6px 24px rgba(25, 45, 75, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.site-header__logo {
+  flex: 0 0 auto;
+  font-size: 1.2rem;
+  letter-spacing: -0.03em;
+}
+
+.site-nav {
+  min-width: 0;
+}
+
+.site-nav__list {
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.site-nav__link {
+  padding: 9px 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.site-nav__link:hover {
+  transform: translateY(-1px);
+}
+
+/* Плавная прокрутка к разделам */
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 110px;
+}
+
+/* ===== Звёзды и отзывы ===== */
+
+.review-card__rating,
+.faq__rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0 0 12px;
+  color: #f5a623;
+  font-size: 1.12rem;
+  letter-spacing: 2px;
+}
+
+.review-card__rating span,
+.faq__rating span {
+  color: #f5a623;
+}
+
+.review-card__rating-label {
+  margin-left: 7px;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0;
+}
+
+.review-card {
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(24, 48, 82, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(24, 48, 82, 0.1);
+}
+
+.review-card__text {
+  line-height: 1.75;
+}
+
+.review-card__author {
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ===== Часто задаваемые вопросы ===== */
+
+.faq__item {
+  padding: 18px 20px;
+  background: var(--color-bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.faq__item[open] {
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 22px rgba(24, 48, 82, 0.06);
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  line-height: 1.55;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::before {
+  content: "★";
+  flex: 0 0 auto;
+  color: #f5a623;
+  font-size: 1rem;
+}
+
+.faq__question::after {
+  content: "＋";
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  font-size: 1.35rem;
+}
+
+.faq__item[open] .faq__question::after {
+  content: "−";
+}
+
+.faq__answer {
+  margin-top: 16px;
+  line-height: 1.8;
+}
+
+.faq__rating {
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 0.98rem;
+}
+
+
+.hero {
+  padding: clamp(28px, 5vw, 56px);
+  box-shadow: 0 14px 36px rgba(0, 87, 184, 0.08);
+}
+
+.button {
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.button--primary:hover {
+  box-shadow: 0 5px 14px rgba(0, 63, 134, 0.2);
+  transform: translateY(-1px);
+}
+
+
+@media (max-width: 900px) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .site-nav__list {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: calc(100vw - 32px);
+    padding: 2px 2px 8px;
+    scrollbar-width: thin;
+  }
+
+  .site-nav__link {
+    font-size: 0.88rem;
+  }
+
+  .products-grid,
+  .reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 600px) {
+  main,
+  footer {
+    padding: 16px;
+  }
+
+  .site-header__inner {
+    padding: 10px 16px 6px;
+  }
+
+  .products-grid,
+  .reviews,
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-layout {
+    grid-template-areas:
+      "filters"
+      "products";
+  }
+
+  .hero {
+    padding: 26px 20px;
+  }
+
+  .order-form__actions {
+    flex-direction: column-reverse;
+  }
+
+  .order-form__actions .button {
+    width: 100%;
+  }
+
+  .to-top {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+/* ===== Доработки: состояния элементов, изображения, варианты карточек ===== */
+
+/* Единые, заметные состояния кнопок */
+.button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform .18s ease, background-color .18s ease,
+    color .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+.button:active:not(:disabled) {
+  transform: translateY(1px) scale(.98);
+  box-shadow: none;
+}
+.button:focus-visible,
+.site-nav__link:focus-visible,
+.product-card:focus-within {
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+}
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: .55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.button--primary:active:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+.button--secondary:active:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+/* Карточки реагируют на наведение и клавиатурный фокус */
+.product-card {
+  min-width: 0;
+  overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(24, 48, 82, .10);
+}
+.product-card:focus-within {
+  border-color: var(--color-primary);
+}
+.product-card--featured {
+  background: linear-gradient(180deg, var(--color-surface-accent), var(--color-bg) 72%);
+  border-width: 2px;
+}
+.product-card--discount {
+  background: #fffafa;
+}
+.product-card--compact {
+  padding: 12px;
+  gap: 6px;
+  box-shadow: none;
+}
+.product-card--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-lg);
+}
+.product-card--horizontal .product-card__content {
+  flex: 1;
+  min-width: 0;
+}
+.product-card--outlined {
+  border-style: dashed;
+  box-shadow: none;
+}
+.product-card--soft {
+  background: var(--color-surface);
+  border-color: transparent;
+}
+.product-card__badge {
+  z-index: 1;
+  max-width: calc(100% - 24px);
+  font-size: .8rem;
+  line-height: 1.3;
+}
+
+/* Изображения: предсказуемые пропорции и адаптивность */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.product-image,
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+.product-card--horizontal .product-card__image {
+  width: min(38%, 220px);
+  flex: 0 0 min(38%, 220px);
+}
+.product-detail__image {
+  width: min(100%, 600px);
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  object-position: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+}
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* Доступность форм: понятные ошибки, подсказки и статусы */
+.order-form__input[aria-invalid="true"],
+.order-form__select[aria-invalid="true"],
+.order-form__textarea[aria-invalid="true"] {
+  border: 2px solid var(--color-danger);
+  background-color: #fff8f8;
+}
+.order-form__error {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-danger);
+  font-size: .9rem;
+}
+.order-form__hint {
+  line-height: 1.45;
+}
+.order-form__field:focus-within .order-form__label {
+  color: var(--color-primary-dark);
+}
+.order-form__input,
+.order-form__select,
+.order-form__textarea {
+  min-height: 44px;
+}
+.order-form__textarea {
+  resize: vertical;
+}
+.order-form__field--checkbox .order-form__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.order-form__field--checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin: 2px 0 0;
+}
+.order-form__actions {
+  flex-wrap: wrap;
+}
+.form-status {
+  margin: 0 0 var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+}
+.form-status--error {
+  color: var(--color-danger);
+  background: #fff0f1;
+}
+.form-status--success {
+  color: #126b25;
+  background: var(--color-success-bg);
+}
+.order-dialog {
+  max-height: min(90vh, 850px);
+  overflow-y: auto;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+}
+@media (max-width: 600px) {
+  .product-card--horizontal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-card--horizontal .product-card__image {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+
+/* Дополнительные информационные страницы */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+.info-card {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+.info-card h2, .info-card h3 { margin-top: 0; }
+.info-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  margin-bottom: var(--space-sm);
+  border-radius: 50%;
+  color: var(--color-primary);
+  background: var(--color-surface-accent);
+  font-size: 1.35rem;
+}
+.info-list { padding-left: 1.25rem; }
+.info-list li { margin-bottom: var(--space-sm); }
+.page-intro { max-width: 760px; margin-bottom: var(--space-xl); }
+.faq-list { max-width: 850px; margin: var(--space-lg) 0; }
+.faq-list details {
+  margin-bottom: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+.faq-list summary { cursor: pointer; font-weight: 700; }
+.faq-list summary:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+.faq-list details p { margin-bottom: 0; color: var(--color-muted); }
+@media (max-width: 640px) {
+  .info-card { padding: var(--space-md); }
+}
